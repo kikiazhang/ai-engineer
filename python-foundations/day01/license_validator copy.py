@@ -1,21 +1,21 @@
 customer = {
-    "id" : "C001",
-    "name" : "John Doe",
-    "country" : "USA",
+    "id": "C001",
+    "name": "John Doe",
+    "country": "USA",
 }
 
 # list, can be list[dict]
 customers = [
     {
-        "id" : "C001",
-        "name" : "John Doe",
-        "country" : "USA",
+        "id": "C001",
+        "name": "John Doe",
+        "country": "USA",
     },
     {
-        "id" : "C002",
-        "name" : "Jane Smith",
-        "country" : "Canada",
-    }
+        "id": "C002",
+        "name": "Jane Smith",
+        "country": "Canada",
+    },
 ]
 
 # for
@@ -44,20 +44,26 @@ licenses = [
         "product": "Azure",
         "seats": 100,
         "active": True,
-    }
+    },
 ]
-    
+
+
 def validate_license(customer, license):
-    if license["active"] and license["seats"] > 0 and customer["country"] == "USA" and customer["id"] == license["customer_id"]:
-        return True
-    return False
+    return (
+        license["active"]
+        and license["seats"] > 0
+        and customer["country"] == "USA"
+        and customer["id"] == license["customer_id"]
+    )
+
 
 for license in licenses:
     if validate_license(customer, license):
         print(f"{license['product']} is valid")
     else:
         print(f"{license['product']} is invalid")
-        
+
+
 def validate_license2(customer, license):
     if not license["active"]:
         return False
@@ -68,7 +74,4 @@ def validate_license2(customer, license):
     if customer["country"] != "USA":
         return False
 
-    if customer["id"] != license["customer_id"]:
-        return False
-
-    return True
+    return customer["id"] == license["customer_id"]

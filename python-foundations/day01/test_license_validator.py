@@ -1,6 +1,4 @@
-from license_validator import Customer
-from license_validator import License
-from license_validator import validate_license4
+from license_validator import Customer, License, validate_license4
 
 
 def test_valid_license():
@@ -19,7 +17,8 @@ def test_valid_license():
     )
 
     assert validate_license4(customer, license_info) is True
-    
+
+
 def test_invalid_license_inactive():
     customer = Customer(
         id="C001",
@@ -36,7 +35,8 @@ def test_invalid_license_inactive():
     )
 
     assert validate_license4(customer, license_info) is False
-    
+
+
 def test_invalid_license_seats():
     customer = Customer(
         id="C001",
@@ -53,7 +53,8 @@ def test_invalid_license_seats():
     )
 
     assert validate_license4(customer, license_info) is False
-    
+
+
 def test_invalid_license_customer_id():
     customer = Customer(
         id="C001",
