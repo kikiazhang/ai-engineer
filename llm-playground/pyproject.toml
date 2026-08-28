@@ -1,0 +1,26 @@
+[project]
+name = "llm-playground"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "kikiazhang", email = "kikiazhang@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "google-genai>=2.20.0",
+    "openai>=3.5.0",
+]
+
+[project.scripts]
+llm-playground = "llm_playground:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.3",
+]
