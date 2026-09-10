@@ -1,0 +1,50 @@
+[
+  {
+    "document_id": "GUIDE-001",
+    "title": "Enterprise License Administration Guide",
+    "source": "fictional://licensing/admin-guide",
+    "version": "1.0",
+    "tenant_id": "demo",
+    "sections": [
+      {
+        "section_id": "reassignment",
+        "title": "Employee Reassignment",
+        "text": "A license may be reassigned from one employee to another after 90 days. The administrator must verify that the previous assignment has been removed before the new assignment becomes active. Exceptions to the 90-day rule require administrator approval and must be recorded in the license audit log.\n\nReassignment within the same customer account is different from transferring a license between customer accounts. Cross-account transfers require a separate approval workflow and may be subject to additional fees. Employees should not use the cross-account transfer process for ordinary internal reassignment requests."
+      },
+      {
+        "section_id": "seat-management",
+        "title": "Seat Management",
+        "text": "Only global admin could manage seats. Customers may allocate seats only up to the number of active licenses they own. An inactive license cannot be used to provision new users or services. Administrators should verify the active seat count before approving a new deployment.\n\nRequests to purchase additional Microsoft 365 seats must be submitted through the authorized purchasing workflow. A capacity validation does not purchase licenses or modify the subscription. The purchasing workflow is separate from the read-only entitlement validation process."
+      },
+      {
+        "section_id": "audit",
+        "title": "Audit and Compliance",
+        "text": "License assignment, reassignment, and administrative approval events must be recorded for audit and compliance review. Audit records should include the customer, license, action, actor, and timestamp.\n\nAdministrators should investigate unexpected seat changes and verify that all assignments comply with the applicable licensing agreement. Audit records must not be used as a substitute for current entitlement validation."
+      }
+    ]
+  },
+  {
+    "document_id": "GUIDE-002",
+    "title": "Subscription Lifecycle Guide",
+    "source": "fictional://licensing/lifecycle-guide",
+    "version": "1.0",
+    "tenant_id": "demo",
+    "sections": [
+      {
+        "section_id": "renewal",
+        "title": "Renewal and Expiration",
+        "text": "Annual subscriptions must be renewed before their expiration date to avoid service interruption. Customers receive an expiration notification at least 30 days before the expiration date. Administrators should review renewal dates and confirm that the customer has completed the required purchasing steps.\n\nAn expired subscription may lose access to licensed services according to its agreement. Renewal is a separate business operation and should not be inferred from a successful license lookup. Trial licenses cannot be extended or renewed under the fictional trial policy."
+      },
+      {
+        "section_id": "cancellation",
+        "title": "Cancellation",
+        "text": "Cancellation requests must follow the applicable subscription agreement and billing terms. Customers should review the effective cancellation date, applicable fees, and any remaining contractual obligations before submitting a request.\n\nA cancellation request does not automatically remove existing license assignments. Administrators must follow the approved deprovisioning process when access needs to be removed. Cancellation and license reassignment are separate operations."
+      },
+      {
+        "section_id": "regional-eligibility",
+        "title": "Regional Eligibility",
+        "text": "Certain licensing offers are available only in eligible geographic regions. Customer eligibility must be verified against the specific offer before a purchase or assignment is approved.\n\nA customer account must be active and verified before new licenses can be assigned. Regional eligibility and account verification are separate checks, and passing one check does not imply that the other requirement has been satisfied."
+      }
+    ]
+  }
+]

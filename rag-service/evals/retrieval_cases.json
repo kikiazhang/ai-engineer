@@ -1,0 +1,32 @@
+[
+  {
+    "id": "reassignment",
+    "query": "Can I transfer my license to another employee?",
+    "relevant_document_ids": ["POL-001"]
+  },
+  {
+    "id": "seat_limit",
+    "query": "Can a customer assign more seats than they own?",
+    "relevant_document_ids": ["POL-002"]
+  },
+  {
+    "id": "inactive",
+    "query": "Can an inactive license be used for a new user?",
+    "relevant_document_ids": ["POL-003"]
+  },
+  {
+    "id": "renewal",
+    "query": "What should we do before the subscription expires?",
+    "relevant_document_ids": ["POL-004"]
+  },
+  {
+    "id": "purchase",
+    "query": "How do we purchase additional Microsoft 365 seats?",
+    "relevant_document_ids": ["POL-007"]
+  },
+  {
+    "id": "license_transfer_general",
+    "query": "What are the rules for transferring or reassigning licenses?",
+    "relevant_document_ids": ["POL-001", "POL-011"]
+  }
+]

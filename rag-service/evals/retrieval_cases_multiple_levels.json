@@ -1,0 +1,26 @@
+[
+  {
+    "id": "early_reassignment",
+    "query": "Can an employee receive a reassigned license before 90 days?",
+    "relevant_document_ids": ["GUIDE-001"],
+    "relevant_section_ids": ["reassignment"]
+  },
+  {
+    "id": "capacity_vs_purchase",
+    "query": "Does capacity validation automatically purchase more seats?",
+    "relevant_document_ids": ["GUIDE-001"],
+    "relevant_section_ids": ["seat-management"]
+  },
+  {
+    "id": "audit_record",
+    "query": "What information should be recorded in a license audit log?",
+    "relevant_document_ids": ["GUIDE-001"],
+    "relevant_section_ids": ["audit"]
+  },
+  {
+    "id": "trial_renewal",
+    "query": "Can a trial subscription be renewed?",
+    "relevant_document_ids": ["GUIDE-002"],
+    "relevant_section_ids": ["renewal"]
+  }
+]

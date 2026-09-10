@@ -1,0 +1,1 @@
+Paragraph-aware chunking preserved paragraph boundaries when possible, but long paragraphs still fell back to fixed-size splitting and sometimes broke words or sentences. This motivates recursive boundary-aware splitting.

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "POL-001",
+    "title": "License Reassignment",
+    "text": "A license may be reassigned to another employee after 90 days. Exceptions require administrator approval."
+  },
+  {
+    "id": "POL-002",
+    "title": "Seat Allocation",
+    "text": "Customers may allocate seats only up to the number of active licenses they own."
+  },
+  {
+    "id": "POL-003",
+    "title": "Inactive Licenses",
+    "text": "Inactive licenses cannot be used to provision new users or services."
+  },
+  {
+    "id": "POL-004",
+    "title": "License Renewal",
+    "text": "Annual subscriptions must be renewed before their expiration date to avoid service interruption."
+  },
+  {
+    "id": "POL-005",
+    "title": "Customer Eligibility",
+    "text": "A customer account must be active and verified before new licenses can be assigned."
+  },
+  {
+    "id": "POL-006",
+    "title": "Power BI Access",
+    "text": "Power BI Pro users require an assigned active license to access Pro-only collaboration features."
+  },
+  {
+    "id": "POL-007",
+    "title": "Microsoft 365 Seat Changes",
+    "text": "Requests to purchase additional Microsoft 365 seats must be submitted through the authorized purchasing workflow."
+  },
+  {
+    "id": "POL-008",
+    "title": "License Audit",
+    "text": "License assignment and reassignment events must be recorded for audit and compliance review."
+  },
+  {
+    "id": "POL-009",
+    "title": "Regional Restrictions",
+    "text": "Certain licensing offers are available only in eligible geographic regions."
+  },
+  {
+    "id": "POL-010",
+    "title": "Subscription Cancellation",
+    "text": "Cancellation requests must follow the applicable subscription agreement and billing terms."
+  },
+  {
+    "id": "POL-011",
+    "title": "License Transfer",
+    "text": "License transfers between accounts require approval from the account administrator and may be subject to additional fees."
+  },
+  {
+    "id": "POL-012",
+    "title": "Trial License Limitations",
+    "text": "Trial licenses are limited to a single use per customer and cannot be extended or renewed."
+  },
+  {
+    "id": "POL-013",
+    "title": "License Expiration Notifications",
+    "text": "Customers will receive notifications regarding license expiration at least 30 days prior to the expiration date."
+  },
+  {
+    "id": "POL-014",
+    "title": "License Compliance",
+    "text": "Customers must ensure that their use of licenses complies with the terms of the licensing agreement."
+  },
+  {
+    "id": "POL-015",
+    "title": "License Upgrade Path",
+    "text": "Customers may upgrade their licenses to higher tiers, subject to availability and pricing."
+  }
+]
