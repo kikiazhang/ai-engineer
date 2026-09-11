@@ -1,0 +1,51 @@
+[
+  {
+    "id": "reassignment",
+    "question": "Can an employee receive a reassigned license before 90 days?",
+    "expected_answerable": true,
+    "expected_document_ids": ["GUIDE-001"],
+    "expected_section_ids": ["reassignment"]
+  },
+  {
+    "id": "capacity",
+    "question": "Does capacity validation automatically purchase more seats?",
+    "expected_answerable": true,
+    "expected_document_ids": ["GUIDE-001"],
+    "expected_section_ids": ["seat-management"]
+  },
+  {
+    "id": "trial",
+    "question": "Can a trial subscription be renewed?",
+    "expected_answerable": true,
+    "expected_document_ids": ["GUIDE-002"],
+    "expected_section_ids": ["renewal"]
+  },
+  {
+    "id": "audit",
+    "question": "What information should be recorded in a license audit log?",
+    "expected_answerable": true,
+    "expected_document_ids": ["GUIDE-001"],
+    "expected_section_ids": ["audit"]
+  },
+  {
+    "id": "unsupported",
+    "question": "What color is the CEO's car?",
+    "expected_answerable": false,
+    "expected_document_ids": [],
+    "expected_section_ids": []
+  },
+  {
+    "id": "exact_cancellation_fee",
+    "question": "What is the exact cancellation fee?",
+    "expected_answerable": false,
+    "expected_document_ids": [],
+    "expected_section_ids": []
+  },
+  {
+    "id": "thirty_day_reassignment",
+    "question": "Can I reassign a license after 30 days?",
+    "expected_answerable": true,
+    "expected_document_ids": ["GUIDE-001"],
+    "expected_section_ids": ["reassignment"]
+  }
+]

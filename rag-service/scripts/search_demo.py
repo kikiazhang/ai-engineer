@@ -79,10 +79,7 @@ def main_with_adapter():
         )
 
         print("Fixed-size chunk search result:")
-        fixed_by_chunk_id = {
-            item["chunk_id"]: item
-            for item in index_fixed
-        }
+        fixed_by_chunk_id = {item["chunk_id"]: item for item in index_fixed}
         for rank, result in enumerate(fixed_results, start=1):
             index_item = fixed_by_chunk_id[result.document_id]
             print(f"\nRank: {rank}")

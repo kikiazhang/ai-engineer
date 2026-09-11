@@ -16,7 +16,8 @@ EVAL_FILE = Path(__file__).parent / "retrieval_cases_multiple_levels.json"
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 INDEX_FIXED_FILE = PROJECT_ROOT / "data" / "index_fixed.json"
 INDEX_PARAGRAPH_FILE = PROJECT_ROOT / "data" / "index_paragraph.json"
-CACHE_FILE = PROJECT_ROOT/ "data" / "embedding_cache.json"
+CACHE_FILE = PROJECT_ROOT / "data" / "embedding_cache.json"
+
 
 def load_cases() -> list[dict]:
     with EVAL_FILE.open() as file:
@@ -43,7 +44,7 @@ def run_eval() -> None:
     fixed_section_recall_3_scores = []
     paragraph_section_recall_1_scores = []
     paragraph_section_recall_3_scores = []
-    
+
     cache = load_embedding_cache(CACHE_FILE)
 
     for case in cases:
@@ -57,7 +58,7 @@ def run_eval() -> None:
             cache=cache,
             embed_fn=embed_text,
         )
-        
+
         print(f"\nCase: {case['id']}")
         print(f"Query: {case['query']}")
         print(f"Expected: {relevant_ids}")
@@ -68,10 +69,7 @@ def run_eval() -> None:
             {"id": item["chunk_id"], "title": item["title"], "text": item["text"]}
             for item in index_fixed
         ]
-        fixed_by_chunk_id = {
-            item["chunk_id"]: item
-            for item in index_fixed
-        }
+        fixed_by_chunk_id = {item["chunk_id"]: item for item in index_fixed}
 
         document_fixed_vectors = [item["vector"] for item in index_fixed]
         fixed_results = search(
@@ -116,10 +114,7 @@ def run_eval() -> None:
             {"id": item["chunk_id"], "title": item["title"], "text": item["text"]}
             for item in index_paragraph
         ]
-        fixed_by_chunk_id = {
-            item["chunk_id"]: item
-            for item in index_paragraph
-        }
+        fixed_by_chunk_id = {item["chunk_id"]: item for item in index_paragraph}
 
         document_paragraph_vectors = [item["vector"] for item in index_paragraph]
         paragraph_results = search(
@@ -161,11 +156,15 @@ def run_eval() -> None:
     mean_fixed_recall_3 = sum(fixed_recall_3_scores) / len(cases)
     mean_paragraph_recall_1 = sum(paragraph_recall_1_scores) / len(cases)
     mean_paragraph_recall_3 = sum(paragraph_recall_3_scores) / len(cases)
-    
+
     mean_section_fixed_recall_1 = sum(fixed_section_recall_1_scores) / len(cases)
     mean_section_fixed_recall_3 = sum(fixed_section_recall_3_scores) / len(cases)
-    mean_section_paragraph_recall_1 = sum(paragraph_section_recall_1_scores) / len(cases)
-    mean_section_paragraph_recall_3 = sum(paragraph_section_recall_3_scores) / len(cases)
+    mean_section_paragraph_recall_1 = sum(paragraph_section_recall_1_scores) / len(
+        cases
+    )
+    mean_section_paragraph_recall_3 = sum(paragraph_section_recall_3_scores) / len(
+        cases
+    )
 
     print("\n=== Evaluation Summary ===")
     print(f"Cases: {len(cases)}")
@@ -173,12 +172,16 @@ def run_eval() -> None:
     print(f"Mean Recall@3 (Fixed): {mean_fixed_recall_3:.4f}")
     print(f"Mean Recall@1 (Paragraph): {mean_paragraph_recall_1:.4f}")
     print(f"Mean Recall@3 (Paragraph): {mean_paragraph_recall_3:.4f}")
-    
+
     print(f"Mean Recall by section@1 (Fixed): {mean_section_fixed_recall_1:.4f}")
     print(f"Mean Recall by section@3 (Fixed): {mean_section_fixed_recall_3:.4f}")
-    print(f"Mean Recall by section@1 (Paragraph): {mean_section_paragraph_recall_1:.4f}")
-    print(f"Mean Recall by section@3 (Paragraph): {mean_section_paragraph_recall_3:.4f}")
-    
+    print(
+        f"Mean Recall by section@1 (Paragraph): {mean_section_paragraph_recall_1:.4f}"
+    )
+    print(
+        f"Mean Recall by section@3 (Paragraph): {mean_section_paragraph_recall_3:.4f}"
+    )
+
     save_embedding_cache(cache_file=CACHE_FILE, cache=cache)
 
 

@@ -92,7 +92,8 @@ def test_build_chunks_with_metadata():
     assert all(
         chunk.title == "Enterprise License Administration Guide" for chunk in chunks
     )
-    
+
+
 def test_embedding_cache_reuses_existing_vector():
     calls = 0
 
@@ -126,10 +127,11 @@ def test_embedding_cache_reuses_existing_vector():
     assert first_hit is False
     assert second_hit is True
     assert calls == 1
-    
+
+
 def test_embedding_cache_change_text():
     calls = 0
-    
+
     def fake_embed(
         text: str,
         task_type: str,
@@ -160,10 +162,11 @@ def test_embedding_cache_change_text():
     assert first_hit is False
     assert second_hit is False
     assert calls == 2
-    
+
+
 def test_embedding_cache_change_model():
     calls = 0
-    
+
     def fake_embed(
         text: str,
         task_type: str,
@@ -194,10 +197,11 @@ def test_embedding_cache_change_model():
     assert first_hit is False
     assert second_hit is False
     assert calls == 2
-    
+
+
 def test_embedding_cache_change_task():
     calls = 0
-    
+
     def fake_embed(
         text: str,
         task_type: str,

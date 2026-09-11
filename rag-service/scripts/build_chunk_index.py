@@ -16,16 +16,15 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 LONG_POLICIES_FILE = PROJECT_ROOT / "data" / "long_policies.json"
 INDEX_FIXED_FILE = PROJECT_ROOT / "data" / "index_fixed.json"
 INDEX_PARAGRAPH_FILE = PROJECT_ROOT / "data" / "index_paragraph.json"
-CACHE_FILE = PROJECT_ROOT/ "data" / "embedding_cache.json"
+CACHE_FILE = PROJECT_ROOT / "data" / "embedding_cache.json"
+
 
 def load_long_policies() -> list[dict]:
     with LONG_POLICIES_FILE.open(encoding="utf-8") as file:
         return json.load(file)
 
 
-def build_chunk_index(
-    strategy: str, chunk_size: int, overlap: int = 0
-) -> list[Chunk]:
+def build_chunk_index(strategy: str, chunk_size: int, overlap: int = 0) -> list[Chunk]:
     """
     This method focus on load documents, chunk, embed, cache, create records, persist index.
     Chunk the input text into fixed-size spans with optional overlap.
@@ -50,7 +49,7 @@ def build_chunk_index(
     chunks = build_chunks(
         documents, strategy=strategy, chunk_size=chunk_size, overlap=overlap
     )
-    
+
     cache = load_embedding_cache(CACHE_FILE)
 
     cache_hits = 0
@@ -63,14 +62,14 @@ def build_chunk_index(
             model=EMBEDDING_MODEL,
             task_type="RETRIEVAL_DOCUMENT",
             cache=cache,
-            embed_fn=embed_text
+            embed_fn=embed_text,
         )
-        
+
         if cache_hit:
             cache_hits += 1
         else:
             cache_misses += 1
-            
+
         record = {
             "chunk_id": chunk.chunk_id,
             "document_id": chunk.document_id,
@@ -93,7 +92,7 @@ def build_chunk_index(
     elif strategy == "paragraph":
         with INDEX_PARAGRAPH_FILE.open("w", encoding="utf-8") as f:
             json.dump(records, f, indent=4)
-            
+
     save_embedding_cache(cache_file=CACHE_FILE, cache=cache)
     print(f"Cache hits: {cache_hits}")
     print(f"Cache misses: {cache_misses}")

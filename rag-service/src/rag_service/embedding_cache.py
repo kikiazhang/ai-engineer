@@ -9,16 +9,16 @@ def make_embedding_cache_key(
     task_type: str,
 ) -> str:
     """
-        Build a stable cache key from all inputs that affect
-        the embedding result.
+    Build a stable cache key from all inputs that affect
+    the embedding result.
 
-        Currently includes:
-        - input text
-        - embedding model
-        - task type
+    Currently includes:
+    - input text
+    - embedding model
+    - task type
 
-        If output dimensionality or other embedding parameters
-        are configured later, they must also be included.
+    If output dimensionality or other embedding parameters
+    are configured later, they must also be included.
     """
     payload = {
         "text": text,
@@ -32,10 +32,9 @@ def make_embedding_cache_key(
         ensure_ascii=False,
     )
 
-    return hashlib.sha256(
-        serialized.encode("utf-8")
-    ).hexdigest()
-    
+    return hashlib.sha256(serialized.encode("utf-8")).hexdigest()
+
+
 def load_embedding_cache(
     cache_file: Path,
 ) -> dict[str, list[float]]:
@@ -55,7 +54,8 @@ def save_embedding_cache(
         encoding="utf-8",
     ) as file:
         json.dump(cache, file)
-        
+
+
 def get_cached_embedding(
     *,
     text: str,
